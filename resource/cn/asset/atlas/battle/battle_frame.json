@@ -1,0 +1,12 @@
+{"file":"battle_frame.png","frames":{
+"ui_card_select_bg":{"x":899,"y":0,"w":110,"h":110,"offX":0,"offY":0,"sourceW":110,"sourceH":110},
+"ui_energy_bg":{"x":311,"y":92,"w":83,"h":45,"offX":0,"offY":0,"sourceW":83,"sourceH":45},
+"ui_frame_bg":{"x":0,"y":0,"w":620,"h":90,"offX":0,"offY":0,"sourceW":620,"sourceH":90},
+"ui_level_bg":{"x":396,"y":92,"w":46,"h":47,"offX":0,"offY":0,"sourceW":46,"sourceH":47},
+"ui_strokes_bg":{"x":766,"y":0,"w":131,"h":130,"offX":0,"offY":0,"sourceW":131,"sourceH":130},
+"ui_strokes_out_bg":{"x":622,"y":0,"w":142,"h":143,"offX":0,"offY":0,"sourceW":142,"sourceH":143},
+"ui_timer_bg":{"x":206,"y":92,"w":103,"h":44,"offX":0,"offY":0,"sourceW":103,"sourceH":44},
+"ui_zdn_lan":{"x":484,"y":92,"w":36,"h":37,"offX":0,"offY":0,"sourceW":36,"sourceH":37},
+"ui_zdn_zi":{"x":444,"y":92,"w":38,"h":38,"offX":0,"offY":0,"sourceW":38,"sourceH":38},
+"ui_card_bg":{"x":0,"y":92,"w":107,"h":108,"offX":0,"offY":0,"sourceW":107,"sourceH":108},
+"ui_card_mask":{"x":109,"y":92,"w":95,"h":95,"offX":0,"offY":0,"sourceW":95,"sourceH":95}}}

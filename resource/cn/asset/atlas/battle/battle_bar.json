@@ -1,0 +1,6 @@
+{"file":"battle_bar.png","frames":{
+"ui_zdn_xuehong":{"x":841,"y":0,"w":125,"h":15,"offX":0,"offY":0,"sourceW":125,"sourceH":15},
+"ui_zdn_xuelan":{"x":714,"y":0,"w":125,"h":15,"offX":0,"offY":0,"sourceW":125,"sourceH":15},
+"ui_zdn_dazi":{"x":0,"y":29,"w":580,"h":25,"offX":0,"offY":0,"sourceW":580,"sourceH":25},
+"ui_zdn_dazidi":{"x":0,"y":0,"w":583,"h":27,"offX":0,"offY":0,"sourceW":583,"sourceH":27},
+"ui_zdn_xuedi":{"x":585,"y":0,"w":127,"h":17,"offX":0,"offY":0,"sourceW":127,"sourceH":17}}}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BattleViewSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+
+
+
+
+	<e:Group horizontalCenter="0" verticalCenter="0" width="100%" height="100%">
+		<e:Image id="imgBg" source="battle_bg_png" left="0" right="0" top="0" bottom="0"/>
+		<e:Image source="battle_frame_json.ui_timer_bg" left="10" top="10"/>
+
+
+
+
+
+	</e:Group>
+
+
+
+
+</e:Skin>

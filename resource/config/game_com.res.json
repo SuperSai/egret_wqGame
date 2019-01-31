@@ -1,0 +1,89 @@
+{
+	"groups": [
+		{
+			"keys": "button_json,frame_json",
+			"name": "common"
+		},
+		{
+			"keys": "global",
+			"name": "global"
+		},
+		{
+			"keys": "loadingBg_jpg,load_Reel_png,loading_player_png",
+			"name": "loading"
+		},
+		{
+			"keys": "roles_json",
+			"name": "role"
+		},
+		{
+			"keys": "leaftexiao_png,leaftexiao_json",
+			"name": "viewParticle"
+		},
+		{
+			"keys": "guildIcon_json",
+			"name": "guildIcon"
+		}
+	],
+	"resources": [
+		{
+			"url": "config/global.json",
+			"type": "json",
+			"name": "global"
+		},
+		{
+			"url": "common/atlas/role/roles.json",
+			"type": "sheet",
+			"name": "roles_json",
+			"subkeys": "role_0,role_1,role_2,role_3,role_4,role_5,role_6,role_7,role_8,role_9"
+		},
+		{
+			"url": "common/heroes/skin/chr_image_130131.png",
+			"type": "image",
+			"name": "chr_image_130131_png"
+		},
+		{
+			"url": "common/atlas/loadingBg.jpg",
+			"type": "image",
+			"name": "loadingBg_jpg"
+		},
+		{
+			"url": "common/atlas/load_Reel.png",
+			"type": "image",
+			"name": "load_Reel_png"
+		},
+		{
+			"url": "common/atlas/loading_player.png",
+			"type": "image",
+			"name": "loading_player_png"
+		},
+		{
+			"url": "common/animation/particle/leaftexiao.png",
+			"type": "image",
+			"name": "leaftexiao_png"
+		},
+		{
+			"url": "common/animation/particle/leaftexiao.json",
+			"type": "json",
+			"name": "leaftexiao_json"
+		},
+		{
+			"url": "common/atlas/button/button.json",
+			"type": "sheet",
+			"name": "button_json",
+			"subkeys": "ui_button_yellow,ui_pipei_honganniu"
+		},
+		{
+			"url": "common/atlas/frame/frame.json",
+			"type": "sheet",
+			"name": "frame_json",
+			"subkeys": "ui_heidian,ui_item_BG_0,ui_item_BG_1,ui_item_BG_2"
+		},
+		{
+			"url": "common/atlas/guildIcon/guildIcon.json",
+			"type": "sheet",
+			"name": "guildIcon_json",
+			"subkeys": "guildIcon_0,guildIcon_1,guildIcon_2"
+		}
+	]
+}

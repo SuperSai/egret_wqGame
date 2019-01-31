@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GoodsItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="imgBg" source="frame_json.ui_item_BG_0" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="imgIcon" source="" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

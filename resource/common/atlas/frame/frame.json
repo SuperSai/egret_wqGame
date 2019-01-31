@@ -1,0 +1,5 @@
+{"file":"frame.png","frames":{
+"ui_item_BG_0":{"x":0,"y":120,"w":118,"h":118,"offX":0,"offY":0,"sourceW":118,"sourceH":118},
+"ui_item_BG_1":{"x":120,"y":0,"w":118,"h":118,"offX":0,"offY":0,"sourceW":118,"sourceH":118},
+"ui_item_BG_2":{"x":0,"y":0,"w":118,"h":118,"offX":0,"offY":0,"sourceW":118,"sourceH":118},
+"ui_heidian":{"x":240,"y":0,"w":1,"h":1,"offX":0,"offY":0,"sourceW":1,"sourceH":1}}}

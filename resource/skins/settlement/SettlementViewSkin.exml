@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SettlementViewSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group x="0" y="0" width="100%" height="100%">
+		<e:Group horizontalCenter="0" verticalCenter="-118">
+			<e:Image id="imgBg" source="settlement_json.ui_jiesuan_shengli" horizontalCenter="0" top="0"/>
+			<e:Group top="353" horizontalCenter="0">
+				<e:Image source="settlement_json.ui_jiesuan_wupindi" scale9Grid="0,28,638,18" anchorOffsetY="0" height="200" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image source="settlement_json.ui_jiesuan_paiweisai" y="15" x="250"/>
+				<e:Button id="btn_sure" label="确定" horizontalCenter="0.5" bottom="-147">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="button_json.ui_button_yellow" source.down="button_json.ui_button_yellow" source.disabled="button_json.ui_button_yellow"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+				</e:Button>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+</e:Skin>

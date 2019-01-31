@@ -1,0 +1,76 @@
+{
+	"groups": [
+		{
+			"keys": "login_json",
+			"name": "login"
+		},
+		{
+			"keys": "battle_bar_json,battle_frame_json,battle_bg_png",
+			"name": "battle"
+		},
+		{
+			"keys": "ui_hall_bg_jpg",
+			"name": "hall"
+		},
+		{
+			"keys": "loading_json",
+			"name": "loading"
+		},
+		{
+			"keys": "vs_json",
+			"name": "vs"
+		},
+		{
+			"keys": "settlement_json",
+			"name": "settlement"
+		}
+	],
+	"resources": [
+		{
+			"url": "cn/asset/atlas/login/login.json",
+			"type": "sheet",
+			"name": "login_json",
+			"subkeys": "login_bg,login_name_icon,login_saizi,login_startBtn"
+		},
+		{
+			"url": "cn/asset/atlas/loading/loading.json",
+			"type": "sheet",
+			"name": "loading_json",
+			"subkeys": "loading_player"
+		},
+		{
+			"url": "cn/asset/atlas/battle/battle_bar.json",
+			"type": "sheet",
+			"name": "battle_bar_json",
+			"subkeys": "ui_zdn_dazi,ui_zdn_dazidi,ui_zdn_xuedi,ui_zdn_xuehong,ui_zdn_xuelan"
+		},
+		{
+			"url": "cn/asset/atlas/battle/battle_frame.json",
+			"type": "sheet",
+			"name": "battle_frame_json",
+			"subkeys": "ui_card_bg,ui_card_mask,ui_card_select_bg,ui_energy_bg,ui_frame_bg,ui_level_bg,ui_strokes_bg,ui_strokes_out_bg,ui_timer_bg,ui_zdn_lan,ui_zdn_zi"
+		},
+		{
+			"url": "cn/asset/atlas/hall/ui_hall_bg.jpg",
+			"type": "image",
+			"name": "ui_hall_bg_jpg"
+		},
+		{
+			"url": "cn/asset/atlas/vs/vs.json",
+			"type": "sheet",
+			"name": "vs_json",
+			"subkeys": "ui_pipei_hongkuang,ui_pipei_jindukuang,ui_pipei_jindutiao,ui_pipei_lankuang,ui_pipei_sousuo,ui_pipei_vs,ui_pipei_vsdi,ui_pipei_wenhaohong,ui_pipei_wenhaolan,ui_vsdi"
+		},
+		{
+			"url": "cn/asset/atlas/settlement/settlement.json",
+			"type": "sheet",
+			"name": "settlement_json",
+			"subkeys": "ui_jiesuan_paiweisai,ui_jiesuan_shengli,ui_jiesuan_sibai,ui_jiesuan_wupindi"
+		},
+		{
+			"url": "cn/asset/atlas/battle/battle_bg.png",
+			"type": "image",
+			"name": "battle_bg_png"
+		}
+	]
+}

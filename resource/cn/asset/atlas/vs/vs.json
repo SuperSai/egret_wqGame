@@ -1,0 +1,11 @@
+{"file":"vs.png","frames":{
+"ui_pipei_sousuo":{"x":797,"y":261,"w":72,"h":74,"offX":0,"offY":0,"sourceW":72,"sourceH":74},
+"ui_pipei_vs":{"x":797,"y":168,"w":185,"h":91,"offX":0,"offY":0,"sourceW":185,"sourceH":91},
+"ui_pipei_vsdi":{"x":642,"y":168,"w":153,"h":161,"offX":0,"offY":0,"sourceW":153,"sourceH":161},
+"ui_pipei_wenhaohong":{"x":871,"y":261,"w":49,"h":82,"offX":0,"offY":0,"sourceW":49,"sourceH":82},
+"ui_pipei_wenhaolan":{"x":922,"y":261,"w":49,"h":82,"offX":0,"offY":0,"sourceW":49,"sourceH":82},
+"ui_vsdi":{"x":0,"y":0,"w":640,"h":1136,"offX":0,"offY":0,"sourceW":640,"sourceH":1136},
+"ui_pipei_hongkuang":{"x":642,"y":0,"w":166,"h":166,"offX":0,"offY":0,"sourceW":166,"sourceH":166},
+"ui_pipei_jindukuang":{"x":0,"y":1138,"w":640,"h":27,"offX":0,"offY":0,"sourceW":640,"sourceH":27},
+"ui_pipei_jindutiao":{"x":0,"y":1167,"w":638,"h":25,"offX":0,"offY":0,"sourceW":638,"sourceH":25},
+"ui_pipei_lankuang":{"x":810,"y":0,"w":166,"h":166,"offX":0,"offY":0,"sourceW":166,"sourceH":166}}}
