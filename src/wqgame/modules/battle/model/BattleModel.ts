@@ -8,10 +8,12 @@ class BattleModel extends BaseModel {
 	}
 	/** 初始化 */
 	private init(): void {
-		let self = this;
 	}
-
-	
 
 }
 
+
+enum TEAM_TYPE {
+	RED = 1,
+	BLUE = 2,
+}

@@ -57,11 +57,7 @@ var SceneMgr = (function (_super) {
             return;
         }
         if (isClear) {
-            var oldScene = this._scenes.TryGetValue(this._currScene);
-            if (oldScene) {
-                oldScene.onExit();
-                oldScene = null;
-            }
+            this.clear();
         }
         nowScene.onEnter.apply(nowScene, param);
         this._currScene = key;

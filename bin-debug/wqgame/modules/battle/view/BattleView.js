@@ -23,13 +23,17 @@ var BattleView = (function (_super) {
     /** 对面板进行显示初始化，用于子类继承 */
     BattleView.prototype.initUI = function () {
         _super.prototype.initUI.call(this);
-        var self = this;
+        this.blueInfo.onAwake();
+        this.redInfo.onAwake();
+        this.blueBlood.onAwake();
+        this.redBlood.onAwake();
+        this.cardSkillView.open();
+        this.criItem.onAwake();
     };
     /** 对面板数据的初始化，用于子类继承 */
     BattleView.prototype.initData = function () {
         _super.prototype.initData.call(this);
         this._model = this.controller.getModel();
-        App.Sound.playBg("10005");
     };
     BattleView.prototype.addEvents = function () {
         _super.prototype.addEvents.call(this);

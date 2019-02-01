@@ -16,6 +16,18 @@ var GoodsItem = (function (_super) {
     function GoodsItem() {
         return _super.call(this, SkinName.GoodsItemSkin) || this;
     }
+    GoodsItem.prototype.dataChanged = function () {
+        _super.prototype.dataChanged.call(this);
+        if (this.data && this.data instanceof GoodsInfo) {
+            this._info = this.data;
+            if (this._info) {
+                this.imgIcon.source = this._info.url;
+            }
+        }
+        else {
+            Log.traceError("@David 物品数据为空或物品数据类型不是GoodsInfo!");
+        }
+    };
     return GoodsItem;
 }(BaseEuiItem));
 __reflect(GoodsItem.prototype, "GoodsItem");

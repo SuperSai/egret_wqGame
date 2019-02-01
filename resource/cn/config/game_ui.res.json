@@ -9,7 +9,7 @@
 			"name": "battle"
 		},
 		{
-			"keys": "ui_hall_bg_jpg",
+			"keys": "ui_hall_bg_jpg,hall_json",
 			"name": "hall"
 		},
 		{
@@ -71,6 +71,12 @@
 			"url": "cn/asset/atlas/battle/battle_bg.png",
 			"type": "image",
 			"name": "battle_bg_png"
+		},
+		{
+			"url": "cn/asset/atlas/hall/hall.json",
+			"type": "sheet",
+			"name": "hall_json",
+			"subkeys": "ui_zdn_paihangbang"
 		}
 	]
 }

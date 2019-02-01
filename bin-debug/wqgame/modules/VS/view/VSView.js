@@ -49,6 +49,8 @@ var VSView = (function (_super) {
         });
         egret.Tween.get(this.bar).wait(2000).set({ visible: true }).to({ value: 100 }, 1000).call(function () {
             egret.Tween.removeTweens(_this.bar);
+            _this.onCancelHandler();
+            App.Scene.runScene(SceneConsts.BATTLE, true);
         }, this.bar);
     };
     VSView.prototype.addEvents = function () {

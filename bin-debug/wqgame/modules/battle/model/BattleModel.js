@@ -18,9 +18,13 @@ var BattleModel = (function (_super) {
     }
     /** 初始化 */
     BattleModel.prototype.init = function () {
-        var self = this;
     };
     return BattleModel;
 }(BaseModel));
 __reflect(BattleModel.prototype, "BattleModel");
+var TEAM_TYPE;
+(function (TEAM_TYPE) {
+    TEAM_TYPE[TEAM_TYPE["RED"] = 1] = "RED";
+    TEAM_TYPE[TEAM_TYPE["BLUE"] = 2] = "BLUE";
+})(TEAM_TYPE || (TEAM_TYPE = {}));
 //# sourceMappingURL=BattleModel.js.map

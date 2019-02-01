@@ -47,6 +47,8 @@ class VSView extends BaseEuiView {
 		});
 		egret.Tween.get(this.bar).wait(2000).set({ visible: true }).to({ value: 100 }, 1000).call(() => {
 			egret.Tween.removeTweens(this.bar);
+			this.onCancelHandler();
+			App.Scene.runScene(SceneConsts.BATTLE, true);
 		}, this.bar);
 	}
 

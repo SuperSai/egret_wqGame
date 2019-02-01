@@ -6,7 +6,20 @@
 
 	<e:Group horizontalCenter="0" verticalCenter="0" width="100%" height="100%">
 		<e:Image id="imgBg" source="battle_bg_png" left="0" right="0" top="0" bottom="0"/>
-		<e:Image source="battle_frame_json.ui_timer_bg" left="10" top="10"/>
+		<e:Group horizontalCenter="0.5" top="17">
+			<e:Image source="battle_frame_json.ui_timer_bg" horizontalCenter="0" verticalCenter="0"/>
+			<e:Label id="txt_time" text="00:00" y="11" fontFamily="Microsoft YaHei" size="20" anchorOffsetX="0" width="62" textAlign="center" horizontalCenter="19.5"/>
+		</e:Group>
+		<ns1:CardSkillView id="cardSkillView" skinName="CardSkillViewSkin" horizontalCenter="0" bottom="0"/>
+		<ns1:CriItem id="criItem" y="942" skinName="CriItemSkin" horizontalCenter="266"/>
+		<ns1:BattleInfo id="blueInfo" skinName="BattleInfoSkin" left="20" top="90"/>
+		<ns1:BattleInfo id="redInfo" skinName="BattleInfoSkin" right="20" top="90"/>
+		<ns1:BattleBlood id="blueBlood" y="452" skinName="BattleBloodSkin" left="15"/>
+		<ns1:BattleBlood id="redBlood" y="452" skinName="BattleBloodSkin" right="15"/>
+
+
+
+
 
 
 

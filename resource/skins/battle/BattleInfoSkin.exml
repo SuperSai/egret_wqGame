@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BattleInfoSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="168a96c1a6c"/>
+	<e:Group x="0" y="0" width="151" height="119">
+		<e:Image source="battle_frame_json.ui_level_bg" x="0" y="0"/>
+		<e:Image id="imgGuild" source="guildIcon_json.guildIcon_0" x="8" y="51.7"/>
+		<e:Image source="hall_json.ui_zdn_paihangbang" x="8.67" y="89.98"/>
+		<e:Label id="txt_level" text="99" x="8.63" y="14.36" fontFamily="Microsoft YaHei" size="18" anchorOffsetX="0" width="28.75" textAlign="center" stroke="2"/>
+		<e:Label id="txt_name" text="David" x="46" y="11.93" fontFamily="Microsoft YaHei" size="26" textAlign="center" stroke="2" textColor="0xff3795"/>
+		<e:Label id="txt_guildName" text="Royaleurks" x="46" y="55.7" fontFamily="Microsoft YaHei" size="20" textAlign="center" stroke="2" textColor="0xf4ecb0"/>
+		<e:Label id="txt_cups" text="9527" x="46" y="93.14" fontFamily="Microsoft YaHei" size="20" textAlign="center" stroke="2" textColor="0xf4ecb0"/>
+	</e:Group>
+</e:Skin>

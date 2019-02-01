@@ -20,6 +20,7 @@ var BattleController = (function (_super) {
         self._battleProxy = new BattleProxy(self);
         //注册模块消息
         self.registerFunc(BattleConst.BATTLE_INIT, self.onBattleInit, self);
+        self.initRegisterView();
         return _this;
     }
     BattleController.prototype.onBattleInit = function () {
@@ -31,6 +32,7 @@ var BattleController = (function (_super) {
     /** 注册界面才可以打开界面 */
     BattleController.prototype.initRegisterView = function () {
         var self = this;
+        App.View.register(ViewConst.SETTLEMENT, new SettlementView(this, LayerMgr.GAME_UI_LAYER));
     };
     return BattleController;
 }(BaseController));

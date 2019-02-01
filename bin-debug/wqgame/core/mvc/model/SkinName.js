@@ -13,6 +13,11 @@ var SkinName = (function () {
     SkinName.HeadItemSkin = "resource/skins/vs/HeadItemSkin.exml";
     SkinName.GoodsItemSkin = "resource/skins/common/item/GoodsItemSkin.exml";
     SkinName.SettlementViewSkin = "resource/skins/settlement/SettlementViewSkin.exml";
+    SkinName.CardSkillViewSkin = "resource/skins/battle/CardSkillViewSkin.exml";
+    SkinName.BattleBloodSkin = "resource/skins/battle/item/BattleBloodSkin.exml";
+    SkinName.CardItemSkin = "resource/skins/battle/item/CardItemSkin.exml";
+    SkinName.CriItemSkin = "resource/skins/battle/item/CriItemSkin.exml";
+    SkinName.BattleInfoSkin = "resource/skins/battle/BattleInfoSkin.exml";
     return SkinName;
 }());
 __reflect(SkinName.prototype, "SkinName");

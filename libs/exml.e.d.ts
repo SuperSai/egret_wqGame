@@ -1,4 +1,14 @@
+declare class BattleInfoSkin extends eui.Skin{
+}
 declare class BattleViewSkin extends eui.Skin{
+}
+declare class CardSkillViewSkin extends eui.Skin{
+}
+declare class BattleBloodSkin extends eui.Skin{
+}
+declare class CardItemSkin extends eui.Skin{
+}
+declare class CriItemSkin extends eui.Skin{
 }
 declare class CurrencyComSkin extends eui.Skin{
 }

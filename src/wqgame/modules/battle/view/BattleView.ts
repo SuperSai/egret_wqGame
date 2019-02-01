@@ -3,6 +3,13 @@
  */
 class BattleView extends BaseEuiView {
 
+	private blueInfo: BattleInfo;
+	private redInfo: BattleInfo;
+	private blueBlood: BattleBlood;
+	private redBlood: BattleBlood;
+	/** 必杀Item */
+	private criItem: CriItem;
+	private cardSkillView: CardSkillView;
 
 	private _model: BattleModel;
 
@@ -16,14 +23,18 @@ class BattleView extends BaseEuiView {
 	/** 对面板进行显示初始化，用于子类继承 */
 	public initUI(): void {
 		super.initUI();
-		let self = this;
+		this.blueInfo.onAwake();
+		this.redInfo.onAwake();
+		this.blueBlood.onAwake();
+		this.redBlood.onAwake();
+		this.cardSkillView.open();
+		this.criItem.onAwake();
 	}
 
 	/** 对面板数据的初始化，用于子类继承 */
 	public initData(): void {
 		super.initData();
 		this._model = <BattleModel>this.controller.getModel();
-		App.Sound.playBg("10005");
 	}
 
 	public addEvents(): void {
@@ -36,5 +47,5 @@ class BattleView extends BaseEuiView {
 		let self = this;
 	}
 
-	
+
 }
