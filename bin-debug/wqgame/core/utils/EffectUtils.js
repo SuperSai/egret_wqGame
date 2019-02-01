@@ -63,6 +63,32 @@ var EffectUtils = (function (_super) {
             App.Display.removeFromParent(bombBone);
         }, obj);
     };
+    /** 从上往下 */
+    EffectUtils.prototype.doFromTopToBottom = function (obj, callback) {
+        if (callback === void 0) { callback = null; }
+        if (obj) {
+            egret.Tween.get(obj).set({ scaleX: 5, scaleY: 5, verticalCenter: -300 }).wait(200).to({ scaleX: 1, scaleY: 1, verticalCenter: 0 }, 100, egret.Ease.elasticInOut).call(function () {
+                egret.Tween.removeTweens(obj);
+                callback && callback();
+            }, obj);
+        }
+        else {
+            callback && callback();
+        }
+    };
+    /** 从两边进入 */
+    EffectUtils.prototype.doBothSides = function (obj, dir, from, to, callback) {
+        if (callback === void 0) { callback = null; }
+        if (obj) {
+            egret.Tween.get(obj).set({ dir: from }).wait(200).to({ dir: to }, 100).call(function () {
+                egret.Tween.removeTweens(obj);
+                callback && callback();
+            }, obj);
+        }
+        else {
+            callback && callback();
+        }
+    };
     /** 物品飞入的特效 */
     EffectUtils.prototype.doGoodsFlyEffect = function (obj, starPos, endPos, callback, duration) {
         if (duration === void 0) { duration = 300; }
@@ -72,51 +98,7 @@ var EffectUtils = (function (_super) {
             callback && callback();
         });
     };
-    /** 界面出现特效 */
-    EffectUtils.prototype.viewShowEffect = function (view, type, callback) {
-        if (type === void 0) { type = VIEW_SHOW_TYPE.UP; }
-        if (callback === void 0) { callback = null; }
-        var param = null;
-        switch (type) {
-            case VIEW_SHOW_TYPE.UP:
-                view.anchorOffsetY = App.Stage.getHeight();
-                param = { anchorOffsetY: 0 };
-                break;
-            case VIEW_SHOW_TYPE.DOWN:
-                view.anchorOffsetY = -(App.Stage.getHeight());
-                param = { anchorOffsetY: 0 };
-                break;
-            case VIEW_SHOW_TYPE.RIGHT:
-                view.anchorOffsetX = App.Stage.getWidth();
-                param = { anchorOffsetX: 0 };
-                break;
-            case VIEW_SHOW_TYPE.LEFT:
-                view.anchorOffsetX = -(App.Stage.getWidth());
-                param = { anchorOffsetX: 0 };
-                break;
-            default:
-                view.anchorOffsetY = App.Stage.getHeight();
-                param = { anchorOffsetY: 0 };
-                break;
-        }
-        egret.Tween.get(view).to(param, 300).call(function () {
-            egret.Tween.removeTweens(view);
-            if (callback)
-                callback();
-        });
-    };
     return EffectUtils;
 }(BaseClass));
 __reflect(EffectUtils.prototype, "EffectUtils");
-var VIEW_SHOW_TYPE;
-(function (VIEW_SHOW_TYPE) {
-    /** 从上到下 */
-    VIEW_SHOW_TYPE[VIEW_SHOW_TYPE["UP"] = 0] = "UP";
-    /** 从下到上 */
-    VIEW_SHOW_TYPE[VIEW_SHOW_TYPE["DOWN"] = 1] = "DOWN";
-    /** 从左到右 */
-    VIEW_SHOW_TYPE[VIEW_SHOW_TYPE["RIGHT"] = 2] = "RIGHT";
-    /** 从右到左 */
-    VIEW_SHOW_TYPE[VIEW_SHOW_TYPE["LEFT"] = 3] = "LEFT";
-})(VIEW_SHOW_TYPE || (VIEW_SHOW_TYPE = {}));
 //# sourceMappingURL=EffectUtils.js.map

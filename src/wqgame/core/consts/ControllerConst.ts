@@ -1,12 +1,10 @@
 enum ControllerConst {
-	Loading = 10000,
-	Login,
-	Hall,
-	Friend,
-	Shop,
-	Warehouse,
-	Factory,
-	Task,
-	Battle,
-	Level
+	LOADING = 10000,
+	LOGIN,
+	HALL,
+	FRIEND,
+	SHOP,
+	TASK,
+	BATTLE,
+	VS,
 }

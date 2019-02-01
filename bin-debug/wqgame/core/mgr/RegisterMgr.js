@@ -26,9 +26,10 @@ var RegisterMgr = (function (_super) {
      * 初始化所有模块控制器
      */
     RegisterMgr.prototype.initModules = function () {
-        App.Controller.register(ControllerConst.Login, new LoginController());
-        App.Controller.register(ControllerConst.Hall, new HallController());
-        App.Controller.register(ControllerConst.Battle, new BattleController());
+        App.Controller.register(ControllerConst.LOGIN, new LoginController());
+        App.Controller.register(ControllerConst.HALL, new HallController());
+        App.Controller.register(ControllerConst.BATTLE, new BattleController());
+        App.Controller.register(ControllerConst.VS, new VSController());
     };
     return RegisterMgr;
 }(BaseClass));

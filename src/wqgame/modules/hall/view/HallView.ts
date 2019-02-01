@@ -34,11 +34,6 @@ class HallView extends BaseEuiView {
 
 	/** 进入战斗 */
 	private onEnterBattle(): void {
-		App.Scene.runScene(SceneConsts.VS, true);
-	}
-
-	/** 显示功能菜单 */
-	private onShowMenu(): void {
-
+		App.View.open(ViewConst.VS);
 	}
 }

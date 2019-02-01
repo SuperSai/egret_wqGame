@@ -98,6 +98,7 @@ class ViewMgr extends BaseClass {
 			App.GameLoading.showLoading();
 			view.loadResource(function () {
 				view.setVisible(false);
+				App.GameLoading.hideLoading();
 				view.addToParent();
 			}.bind(this), function () {
 				view.initUI();
@@ -106,7 +107,6 @@ class ViewMgr extends BaseClass {
 				view.initData();
 				view.setVisible(true);
 				openComplete && openComplete();
-				App.GameLoading.hideLoading();
 			}.bind(this));
 		}
 

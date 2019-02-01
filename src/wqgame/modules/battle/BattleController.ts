@@ -18,6 +18,7 @@ class BattleController extends BaseController {
 
 		//注册模块消息
 		self.registerFunc(BattleConst.BATTLE_INIT, self.onBattleInit, self);
+		self.initRegisterView();
 	}
 
 	private onBattleInit(): void {
@@ -29,6 +30,7 @@ class BattleController extends BaseController {
 	/** 注册界面才可以打开界面 */
 	private initRegisterView(): void {
 		let self = this;
+		App.View.register(ViewConst.SETTLEMENT, new SettlementView(this, LayerMgr.GAME_UI_LAYER));
 	}
 
 }

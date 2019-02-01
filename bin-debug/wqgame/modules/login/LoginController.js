@@ -54,7 +54,7 @@ var LoginController = (function (_super) {
         self._loginView.loginSuccess();
         //UI跳转
         App.View.close(ViewConst.LOGIN);
-        var model = self.getControllerModel(ControllerConst.Login);
+        var model = self.getControllerModel(ControllerConst.LOGIN);
     };
     return LoginController;
 }(BaseController));

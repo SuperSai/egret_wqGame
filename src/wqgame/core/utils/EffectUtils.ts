@@ -57,6 +57,30 @@ class EffectUtils extends BaseClass {
 		}, obj);
 	}
 
+	/** 从上往下 */
+	public doFromTopToBottom(obj: any, callback: Function = null): void {
+		if (obj) {
+			egret.Tween.get(obj).set({ scaleX: 5, scaleY: 5, verticalCenter: -300 }).wait(200).to({ scaleX: 1, scaleY: 1, verticalCenter: 0 }, 100, egret.Ease.elasticInOut).call(() => {
+				egret.Tween.removeTweens(obj);
+				callback && callback();
+			}, obj);
+		} else {
+			callback && callback();
+		}
+	}
+
+	/** 从两边进入 */
+	public doBothSides(obj: any, dir: string, from: number, to: number, callback: Function = null): void {
+		if (obj) {
+			egret.Tween.get(obj).set({ dir: from }).wait(200).to({ dir: to }, 100).call(() => {
+				egret.Tween.removeTweens(obj);
+				callback && callback();
+			}, obj);
+		} else {
+			callback && callback();
+		}
+	}
+
 	/** 物品飞入的特效 */
 	public doGoodsFlyEffect(obj: egret.DisplayObjectContainer, starPos: egret.Point, endPos: egret.Point, callback: Function, duration: number = 300): void {
 		egret.Tween.get(obj).set({ x: starPos.x, y: starPos.y });
@@ -66,45 +90,5 @@ class EffectUtils extends BaseClass {
 		})
 	}
 
-	/** 界面出现特效 */
-	public viewShowEffect(view: any, type: number = VIEW_SHOW_TYPE.UP, callback: Function = null): void {
-		let param: any = null;
-		switch (type) {
-			case VIEW_SHOW_TYPE.UP:
-				view.anchorOffsetY = App.Stage.getHeight();
-				param = { anchorOffsetY: 0 };
-				break;
-			case VIEW_SHOW_TYPE.DOWN:
-				view.anchorOffsetY = -(App.Stage.getHeight());
-				param = { anchorOffsetY: 0 };
-				break;
-			case VIEW_SHOW_TYPE.RIGHT:
-				view.anchorOffsetX = App.Stage.getWidth();
-				param = { anchorOffsetX: 0 };
-				break;
-			case VIEW_SHOW_TYPE.LEFT:
-				view.anchorOffsetX = -(App.Stage.getWidth());
-				param = { anchorOffsetX: 0 };
-				break;
-			default:
-				view.anchorOffsetY = App.Stage.getHeight();
-				param = { anchorOffsetY: 0 };
-				break;
-		}
-		egret.Tween.get(view).to(param, 300).call(() => {
-			egret.Tween.removeTweens(view);
-			if (callback) callback();
-		});
-	}
-}
 
-enum VIEW_SHOW_TYPE {
-	/** 从上到下 */
-	UP,
-	/** 从下到上 */
-	DOWN,
-	/** 从左到右 */
-	RIGHT,
-	/** 从右到左 */
-	LEFT,
 }

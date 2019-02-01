@@ -41,12 +41,15 @@ var BaseEuiItem = (function (_super) {
         }
     };
     BaseEuiItem.prototype.removeEvents = function () {
-        var self = this;
+    };
+    /** 释放 */
+    BaseEuiItem.prototype.release = function () {
+        this.removeEvents();
     };
     /**移出舞台后调用 */
     BaseEuiItem.prototype.onRemoveFromStage = function (evt) {
         var self = this;
-        self.removeEvents();
+        self.release();
         if (this._btnEffect)
             this._btnEffect.dispose();
         this._btnEffect = null;

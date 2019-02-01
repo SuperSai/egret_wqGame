@@ -4,7 +4,7 @@
 		<e:Image source="vs_json.ui_vsdi" left="0" right="0" top="0" bottom="0"/>
 		<e:Image source="vs_json.ui_pipei_vsdi" horizontalCenter="0" verticalCenter="0"/>
 		<e:Image id="imgVS" source="vs_json.ui_pipei_vs" horizontalCenter="0" verticalCenter="0"/>
-		<e:ProgressBar id="bar" skinName="skins.ProgressBarSkin" value="100" bottom="0" horizontalCenter="0" width="100%"/>
+
 		<ns1:HeadItem id="head_left" skinName="HeadItemSkin" left="58" verticalCenter="21"/>
 		<ns1:HeadItem id="head_right" skinName="HeadItemSkin" verticalCenter="21" right="58"/>
 		<e:Image id="imgSeek" source="vs_json.ui_pipei_sousuo" left="177" top="130"/>
@@ -13,5 +13,6 @@
 			<e:Image source="button_json.ui_pipei_honganniu" x="0" y="0"/>
 			<e:Label text="取消" horizontalCenter="0.5" verticalCenter="-5" fontFamily="Microsoft YaHei" size="50" stroke="2"/>
 		</e:Group>
+		<ns1:CustomProgressBar id="bar" skinName="skins.ProgressBarSkin" horizontalCenter="0" bottom="0" width="100%" value="0"/>
 	</e:Group>
 </e:Skin>

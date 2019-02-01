@@ -35,13 +35,17 @@ class BaseEuiItem extends eui.ItemRenderer {
 	}
 
 	public removeEvents(): void {
-		let self = this;
+	}
+
+	/** 释放 */
+	public release(): void {
+		this.removeEvents();
 	}
 
 	/**移出舞台后调用 */
 	protected onRemoveFromStage(evt: egret.Event): void {
 		let self = this;
-		self.removeEvents();
+		self.release();
 		if (this._btnEffect) this._btnEffect.dispose();
 		this._btnEffect = null;
 	}

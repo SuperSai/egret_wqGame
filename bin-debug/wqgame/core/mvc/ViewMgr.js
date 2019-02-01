@@ -99,6 +99,7 @@ var ViewMgr = (function (_super) {
             App.GameLoading.showLoading();
             view.loadResource(function () {
                 view.setVisible(false);
+                App.GameLoading.hideLoading();
                 view.addToParent();
             }.bind(this), function () {
                 view.initUI();
@@ -107,7 +108,6 @@ var ViewMgr = (function (_super) {
                 view.initData();
                 view.setVisible(true);
                 openComplete && openComplete();
-                App.GameLoading.hideLoading();
             }.bind(this));
         }
         this._opens.push(key);

@@ -14,7 +14,7 @@ class BattleScene extends BaseScene {
 	  */
 	public onEnter(...param: any[]): void {
 		super.onEnter();
-		App.Controller.applyFunc(ControllerConst.Battle, BattleConst.BATTLE_INIT);
+		App.Controller.applyFunc(ControllerConst.BATTLE, BattleConst.BATTLE_INIT);
 	}
 
     /**

@@ -7,6 +7,4 @@ enum SceneConsts {
     LOADING,
     /** 登陆场景 */
     LOGIN,
-    /** 匹配场景 */
-    VS,
 }

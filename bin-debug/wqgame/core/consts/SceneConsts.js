@@ -8,7 +8,5 @@ var SceneConsts;
     SceneConsts[SceneConsts["LOADING"] = 3] = "LOADING";
     /** 登陆场景 */
     SceneConsts[SceneConsts["LOGIN"] = 4] = "LOGIN";
-    /** 匹配场景 */
-    SceneConsts[SceneConsts["VS"] = 5] = "VS";
 })(SceneConsts || (SceneConsts = {}));
 //# sourceMappingURL=SceneConsts.js.map

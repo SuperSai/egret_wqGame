@@ -38,10 +38,7 @@ var HallView = (function (_super) {
     };
     /** 进入战斗 */
     HallView.prototype.onEnterBattle = function () {
-        App.Scene.runScene(SceneConsts.VS, true);
-    };
-    /** 显示功能菜单 */
-    HallView.prototype.onShowMenu = function () {
+        App.View.open(ViewConst.VS);
     };
     return HallView;
 }(BaseEuiView));

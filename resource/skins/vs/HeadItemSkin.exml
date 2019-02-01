@@ -5,9 +5,9 @@
 		<e:Image id="imgHead" anchorOffsetX="0" width="138" anchorOffsetY="0" height="138" source="" horizontalCenter="0" verticalCenter="0"/>
 		<e:Image id="imgSeek" source="vs_json.ui_pipei_wenhaolan" horizontalCenter="0" verticalCenter="0"/>
 	</e:Group>
-	<e:Group horizontalCenter="0" bottom="0">
+	<e:Group id="nameGroup" horizontalCenter="0" bottom="0">
 		<e:Image id="imgGuild" source="guildIcon_json.guildIcon_0" x="0" y="0"/>
-		<e:Label id="txt_name" text="David" x="34" y="6" fontFamily="Microsoft YaHei" size="20" textColor="0xf4ecb0" stroke="2" strokeColor="0x000000"/>
+		<e:Label id="txt_name" text="David" x="34" y="6" fontFamily="Microsoft YaHei" size="26" textColor="0xf4ecb0" stroke="2" strokeColor="0x000000"/>
 		<e:layout>
 			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="2"/>
 		</e:layout>

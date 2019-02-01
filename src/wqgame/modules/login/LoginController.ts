@@ -55,6 +55,6 @@ class LoginController extends BaseController {
 		//UI跳转
 		App.View.close(ViewConst.LOGIN);
 
-		var model: BaseModel = self.getControllerModel(ControllerConst.Login);
+		var model: BaseModel = self.getControllerModel(ControllerConst.LOGIN);
 	}
 }
