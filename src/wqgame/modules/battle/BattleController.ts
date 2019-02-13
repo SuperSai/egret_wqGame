@@ -25,12 +25,38 @@ class BattleController extends BaseController {
 		let self = this;
 		if (App.View.isShow(ViewConst.BATTLE)) return;
 		App.View.open(ViewConst.BATTLE);
+		// App.Timer.doFrame(1, 0, self.onBattleUpdate, self);
+	}
+
+	private onBattleUpdate(): void {
+		if (this._battleModel.bulletBlues.length > 0) {
+			Log.trace(this._battleModel.bulletBlues[0].x);
+		}
 	}
 
 	/** 注册界面才可以打开界面 */
 	private initRegisterView(): void {
 		let self = this;
 		App.View.register(ViewConst.SETTLEMENT, new SettlementView(this, LayerMgr.GAME_UI_LAYER));
+	}
+
+	/** 创建子弹 */
+	public createBullet(team: number, vo: BulletVO, durable: number, cardType: number, startPos: egret.Point, endPos: egret.Point): void {
+		let bullet: BaseBullet = new BaseBullet(this, LayerMgr.GAME_UI_LAYER);
+		bullet.team = team;
+		bullet.open({ startPos: startPos, endPos: endPos, vo: vo, durable: durable, cardType: cardType });
+		bullet.addToParent();
+		team == TEAM_TYPE.BLUE ? this._battleModel.bulletBlues.push(bullet) : this._battleModel.bulletReds.push(bullet);
+		bullet.doBulletPath(team == TEAM_TYPE.BLUE ? 1 : -1);
+	}
+
+
+	public get battleView(): BattleView {
+		return this._battleView;
+	}
+
+	public set battleView(value: BattleView) {
+		this._battleView = value;
 	}
 
 }

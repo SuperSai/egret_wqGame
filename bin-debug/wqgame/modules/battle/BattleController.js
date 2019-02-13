@@ -28,12 +28,37 @@ var BattleController = (function (_super) {
         if (App.View.isShow(ViewConst.BATTLE))
             return;
         App.View.open(ViewConst.BATTLE);
+        // App.Timer.doFrame(1, 0, self.onBattleUpdate, self);
+    };
+    BattleController.prototype.onBattleUpdate = function () {
+        if (this._battleModel.bulletBlues.length > 0) {
+            Log.trace(this._battleModel.bulletBlues[0].x);
+        }
     };
     /** 注册界面才可以打开界面 */
     BattleController.prototype.initRegisterView = function () {
         var self = this;
         App.View.register(ViewConst.SETTLEMENT, new SettlementView(this, LayerMgr.GAME_UI_LAYER));
     };
+    /** 创建子弹 */
+    BattleController.prototype.createBullet = function (team, vo, durable, cardType, startPos, endPos) {
+        var bullet = new BaseBullet(this, LayerMgr.GAME_UI_LAYER);
+        bullet.team = team;
+        bullet.open({ startPos: startPos, endPos: endPos, vo: vo, durable: durable, cardType: cardType });
+        bullet.addToParent();
+        team == TEAM_TYPE.BLUE ? this._battleModel.bulletBlues.push(bullet) : this._battleModel.bulletReds.push(bullet);
+        bullet.doBulletPath(team == TEAM_TYPE.BLUE ? 1 : -1);
+    };
+    Object.defineProperty(BattleController.prototype, "battleView", {
+        get: function () {
+            return this._battleView;
+        },
+        set: function (value) {
+            this._battleView = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return BattleController;
 }(BaseController));
 __reflect(BattleController.prototype, "BattleController");

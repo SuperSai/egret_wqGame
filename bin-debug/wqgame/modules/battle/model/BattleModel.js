@@ -18,7 +18,31 @@ var BattleModel = (function (_super) {
     }
     /** 初始化 */
     BattleModel.prototype.init = function () {
+        this._bulletBlues = [];
+        this._bulletReds = [];
     };
+    Object.defineProperty(BattleModel.prototype, "bulletBlues", {
+        /** 蓝队子弹列表 */
+        get: function () {
+            return this._bulletBlues;
+        },
+        set: function (value) {
+            this._bulletBlues = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(BattleModel.prototype, "bulletReds", {
+        /** 红队子弹列表 */
+        get: function () {
+            return this._bulletReds;
+        },
+        set: function (value) {
+            this._bulletReds = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return BattleModel;
 }(BaseModel));
 __reflect(BattleModel.prototype, "BattleModel");

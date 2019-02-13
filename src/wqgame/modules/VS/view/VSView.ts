@@ -19,6 +19,7 @@ class VSView extends BaseEuiView {
 	/** 对面板进行显示初始化，用于子类继承 */
 	public initUI(): void {
 		super.initUI();
+		this.btn_cancel.visible = true;
 		this.head_left.visible = this.head_right.visible = this.btn_cancel.visible = this.bar.visible = false;
 		this.bar.value = 0;
 		this.bar.labelDisplay.visible = false;
@@ -45,7 +46,7 @@ class VSView extends BaseEuiView {
 				this.btn_cancel.visible = true;
 			}, this.head_right);
 		});
-		egret.Tween.get(this.bar).wait(2000).set({ visible: true }).to({ value: 100 }, 1000).call(() => {
+		egret.Tween.get(this.bar).wait(2000).set({ visible: true }).call(() => { this.btn_cancel.visible = false }).to({ value: 100 }, 1000).call(() => {
 			egret.Tween.removeTweens(this.bar);
 			this.onCancelHandler();
 			App.Scene.runScene(SceneConsts.BATTLE, true);

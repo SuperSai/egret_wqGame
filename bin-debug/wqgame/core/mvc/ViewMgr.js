@@ -168,9 +168,12 @@ var ViewMgr = (function (_super) {
      * 关闭所有开启中的UI
      */
     ViewMgr.prototype.closeAll = function () {
-        for (var i = 0; i < this._opens.length; i++) {
-            this.close(this._opens[i]);
+        while (this._opens.length > 0) {
+            this.close(this._opens[0]);
         }
+        // for (let i: number = 0; i < this._opens.length; i++) {
+        // 	this.close(this._opens[i]);
+        // }
     };
     /**
      * 当前ui打开数量

@@ -12,3 +12,4 @@ battle.txt.01:没有多余的底座,请拖动合成新角色!
 battle.txt.02:第{0}-{1}波
 battle.txt.03:BOSS战
 label.01:金币不足!
+label.02:能量值不足！

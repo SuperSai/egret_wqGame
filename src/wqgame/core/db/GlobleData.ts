@@ -22,21 +22,17 @@ class GlobleData extends egret.DisplayObject {
 
 	public static ServerConfigVO: string = "ServerConfig_json";
 	public static BoneAnimationVO: string = "BoneAnimation_json";
-	public static LevelVO: string = "Level_json";
 	public static SoundVO: string = "Sound_json";
-	public static MonsterVO: string = "Monster_json";
-	public static HeroVO: string = "Hero_json";
 	public static BulletVO: string = "Bullet_json";
 	public static ItemVO: string = "Item_json";
+	public static CardVO: string = "Card_json";
 
 	private initModel(): void {
 		let self = this;
-		self._totalStepCsvList.Add(GlobleData.LevelVO, LevelVO);
 		self._totalStepCsvList.Add(GlobleData.BoneAnimationVO, BoneAnimationVO);
 		self._totalStepCsvList.Add(GlobleData.SoundVO, SoundVO);
-		self._totalStepCsvList.Add(GlobleData.MonsterVO, MonsterVO);
 		self._totalStepCsvList.Add(GlobleData.ServerConfigVO, ServerConfigVO);
-		self._totalStepCsvList.Add(GlobleData.HeroVO, HeroVO);
+		self._totalStepCsvList.Add(GlobleData.CardVO, CardVO);
 		self._totalStepCsvList.Add(GlobleData.BulletVO, BulletVO);
 		self._totalStepCsvList.Add(GlobleData.ItemVO, ItemVO);
 	}
@@ -48,7 +44,7 @@ class GlobleData extends egret.DisplayObject {
 		RES.getResAsync("json_zip", this.onloadDataComplete, self);
 		Log.trace("dataFile is json_zip");
 	}
-	
+
 	private onloadDataComplete(data: any, key: string): void {
 		let self = this;
 		self._csvZipData = new JSZip(data);

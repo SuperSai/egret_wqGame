@@ -19,6 +19,7 @@ var BattleBlood = (function (_super) {
     BattleBlood.prototype.onAwake = function ($data) {
         if ($data === void 0) { $data = null; }
         _super.prototype.onAwake.call(this, $data);
+        this.bar.labelDisplay.visible = false;
         this.bar.bg.source = "battle_bar_json.ui_zdn_xuedi";
         var barUrl = "";
         if (this.data) {
@@ -29,16 +30,30 @@ var BattleBlood = (function (_super) {
                 barUrl = "battle_bar_json.ui_zdn_xuehong";
             }
             this.bar.thumb.source = barUrl;
+            this.addEvents();
+        }
+    };
+    BattleBlood.prototype.addEvents = function () {
+        App.NotificationCenter.addListener(EventsType.UPDATE_BLOOD, this.onUpdateBlood, this);
+    };
+    BattleBlood.prototype.removeEvents = function () {
+        _super.prototype.removeEvents.call(this);
+        App.NotificationCenter.removeListener(EventsType.UPDATE_BLOOD, this.onUpdateBlood, this);
+    };
+    BattleBlood.prototype.onUpdateBlood = function (team, durable) {
+        if (team != this.data.team) {
+            this.bar.value -= durable;
+            this.txt_blood.text = this.bar.value + "";
         }
     };
     /** 设置血量 */
     BattleBlood.prototype.setCurrBlood = function (blood, isMaxBlood) {
         if (isMaxBlood === void 0) { isMaxBlood = false; }
-        this.bar.value = blood;
-        this.txt_blood.text = blood + "";
         if (isMaxBlood) {
             this.bar.maximum = blood;
         }
+        this.bar.value = blood;
+        this.txt_blood.text = blood + "";
     };
     return BattleBlood;
 }(BaseEuiItem));

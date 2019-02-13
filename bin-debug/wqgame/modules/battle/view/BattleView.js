@@ -25,23 +25,42 @@ var BattleView = (function (_super) {
         _super.prototype.initUI.call(this);
         this.blueInfo.onAwake();
         this.redInfo.onAwake();
-        this.blueBlood.onAwake();
-        this.redBlood.onAwake();
-        this.cardSkillView.open();
+        this.blueBlood.onAwake({ team: TEAM_TYPE.BLUE });
+        this.blueBlood.setCurrBlood(1000, true);
+        this.redBlood.onAwake({ team: TEAM_TYPE.RED });
+        this.redBlood.setCurrBlood(1000, true);
         this.criItem.onAwake();
     };
     /** 对面板数据的初始化，用于子类继承 */
     BattleView.prototype.initData = function () {
         _super.prototype.initData.call(this);
-        this._model = this.controller.getModel();
+        this._mode = this.controller.getModel();
+        this._battleController = this.controller;
+        this.cardSkillView.open(this._battleController);
     };
     BattleView.prototype.addEvents = function () {
         _super.prototype.addEvents.call(this);
-        var self = this;
+        App.NotificationCenter.addListener(EventsType.UPDATE_BATTLE_VIEW, this.onUpdateBattleView, this);
     };
     BattleView.prototype.removeEvents = function () {
         _super.prototype.removeEvents.call(this);
-        var self = this;
+        App.NotificationCenter.removeListener(EventsType.UPDATE_BATTLE_VIEW, this.onUpdateBattleView, this);
+    };
+    BattleView.prototype.onUpdateBattleView = function (team, bullet) {
+        if (team == TEAM_TYPE.BLUE) {
+            ObjectUtils.removeFromArray(bullet, this._mode.bulletBlues);
+        }
+        else if (team == TEAM_TYPE.RED) {
+            ObjectUtils.removeFromArray(bullet, this._mode.bulletReds);
+        }
+    };
+    BattleView.prototype.close = function () {
+        var param = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            param[_i] = arguments[_i];
+        }
+        _super.prototype.close.call(this, param);
+        this.cardSkillView.close();
     };
     return BattleView;
 }(BaseEuiView));

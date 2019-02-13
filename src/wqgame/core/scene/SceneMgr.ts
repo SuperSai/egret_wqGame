@@ -46,7 +46,11 @@ class SceneMgr extends BaseClass {
 			return;
 		}
 		if (isClear) {
-			this.clear();
+			let oldScene: BaseScene = this._scenes.TryGetValue(this._currScene);
+			if (oldScene) {
+				oldScene.onExit();
+				oldScene = null;
+			}
 		}
 		nowScene.onEnter.apply(nowScene, param);
 		this._currScene = key;

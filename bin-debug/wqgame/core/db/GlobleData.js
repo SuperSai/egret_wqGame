@@ -35,12 +35,10 @@ var GlobleData = (function (_super) {
     };
     GlobleData.prototype.initModel = function () {
         var self = this;
-        self._totalStepCsvList.Add(GlobleData.LevelVO, LevelVO);
         self._totalStepCsvList.Add(GlobleData.BoneAnimationVO, BoneAnimationVO);
         self._totalStepCsvList.Add(GlobleData.SoundVO, SoundVO);
-        self._totalStepCsvList.Add(GlobleData.MonsterVO, MonsterVO);
         self._totalStepCsvList.Add(GlobleData.ServerConfigVO, ServerConfigVO);
-        self._totalStepCsvList.Add(GlobleData.HeroVO, HeroVO);
+        self._totalStepCsvList.Add(GlobleData.CardVO, CardVO);
         self._totalStepCsvList.Add(GlobleData.BulletVO, BulletVO);
         self._totalStepCsvList.Add(GlobleData.ItemVO, ItemVO);
     };
@@ -122,12 +120,10 @@ var GlobleData = (function (_super) {
     GlobleData.AllCacheData = new TSDictionary();
     GlobleData.ServerConfigVO = "ServerConfig_json";
     GlobleData.BoneAnimationVO = "BoneAnimation_json";
-    GlobleData.LevelVO = "Level_json";
     GlobleData.SoundVO = "Sound_json";
-    GlobleData.MonsterVO = "Monster_json";
-    GlobleData.HeroVO = "Hero_json";
     GlobleData.BulletVO = "Bullet_json";
     GlobleData.ItemVO = "Item_json";
+    GlobleData.CardVO = "Card_json";
     return GlobleData;
 }(egret.DisplayObject));
 __reflect(GlobleData.prototype, "GlobleData");

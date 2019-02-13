@@ -26,9 +26,12 @@ var CardSkillView = (function (_super) {
             param[_i] = arguments[_i];
         }
         _super.prototype.open.call(this, param);
+        this._battleController = param[0];
         this.initView();
+        this.addEvents();
     };
     CardSkillView.prototype.initView = function () {
+        this.bar.labelDisplay.visible = false;
         this.bar.bg.source = "battle_bar_json.ui_zdn_dazidi";
         this.bar.thumb.source = "battle_bar_json.ui_zdn_dazi";
         this.arrColl = new eui.ArrayCollection();
@@ -38,13 +41,27 @@ var CardSkillView = (function (_super) {
     };
     CardSkillView.prototype.addEvents = function () {
         _super.prototype.addEvents.call(this);
+        App.NotificationCenter.addListener(EventsType.BULLET_LAUNCH, this.onBulletLaunch, this);
     };
     CardSkillView.prototype.removeEvents = function () {
         _super.prototype.removeEvents.call(this);
-        var self = this;
+        App.NotificationCenter.removeListener(EventsType.BULLET_LAUNCH, this.onBulletLaunch, this);
     };
     CardSkillView.prototype.updateCardLists = function () {
-        this.arrColl.replaceAll([1, 2, 3, 4, 5]);
+        this.arrColl.replaceAll([10001, 10002, 10003, 10004, 10005]);
+    };
+    /** 子弹发射 */
+    CardSkillView.prototype.onBulletLaunch = function (cardVO) {
+        if (parseInt(this.txt_energy.text) >= cardVO.energy) {
+            var vo = GlobleData.getData(GlobleData.BulletVO, cardVO.bulletId);
+            if (vo && this._battleController && this._battleController.battleView) {
+                this._battleController.createBullet(TEAM_TYPE.BLUE, vo, cardVO.durable, cardVO.type, this._battleController.battleView.leftPlayer.localToGlobal(), this._battleController.battleView.rightPlayer.localToGlobal());
+                this.txt_energy.text = parseInt(this.txt_energy.text) - cardVO.energy + "";
+            }
+        }
+        else {
+            App.Message.showText(App.Language.getLanguageText("label.02"));
+        }
     };
     return CardSkillView;
 }(BaseEuiView));

@@ -35,10 +35,10 @@ var SettlementView = (function (_super) {
     SettlementView.prototype.initEffect = function () {
         var _this = this;
         egret.Tween.get(this.container).wait(100).
-            to({ scaleX: 1, scaleY: 1 }, 500, egret.Ease.bounceInOut).wait(1000).
-            to({ verticalCenter: -120 }, 500, egret.Ease.bounceInOut).wait(100).call(function () {
+            to({ scaleX: 1, scaleY: 1 }, 500, egret.Ease.bounceInOut).wait(500).
+            to({ verticalCenter: -120 }, 500, egret.Ease.backIn).wait(100).call(function () {
             egret.Tween.removeTweens(_this.container);
-            egret.Tween.get(_this.rewardGroup).to({ scaleX: 1, scaleY: 1 }, 500, egret.Ease.quintInOut).call(function () {
+            egret.Tween.get(_this.rewardGroup).to({ scaleX: 1, scaleY: 1 }, 500).call(function () {
                 egret.Tween.removeTweens(_this.rewardGroup);
                 _this.updateRewardList();
             }, _this.rewardGroup);

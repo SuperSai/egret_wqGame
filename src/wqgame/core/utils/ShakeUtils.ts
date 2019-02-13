@@ -13,7 +13,7 @@ class ShakeUtils extends BaseClass {
 	private _shockPoss: Array<any>;
 	private _shockLength: number = 0;
 	private _shockCount: number = 0;
-	private _target: egret.DisplayObject;
+	private _target: any;
 	private _rx: number = 0;
 	private _ry: number = 0;
 	private _type: number = 0;
@@ -24,7 +24,7 @@ class ShakeUtils extends BaseClass {
 		this.stop();
 	}
 
-	public shock(type: number = 0, target: egret.DisplayObject = null, repeatCount: number = 3): void {
+	public shock(type: number = 0, target: any = null, repeatCount: number = 3): void {
 		if (this._target) {
 			return;
 		}

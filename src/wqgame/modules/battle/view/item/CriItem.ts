@@ -26,7 +26,7 @@ class CriItem extends BaseEuiItem {
 	}
 
 	private onClickCri(): void {
-
+		App.View.open(ViewConst.SETTLEMENT);
 	}
 }
 

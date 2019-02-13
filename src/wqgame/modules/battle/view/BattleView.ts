@@ -10,8 +10,10 @@ class BattleView extends BaseEuiView {
 	/** 必杀Item */
 	private criItem: CriItem;
 	private cardSkillView: CardSkillView;
-
-	private _model: BattleModel;
+	public leftPlayer: eui.Image;
+	public rightPlayer: eui.Image;
+	private _battleController: BattleController;
+	private _mode: BattleModel;
 
 	public constructor($controller: BaseController, $layer: number) {
 		super($controller, $layer);
@@ -25,27 +27,41 @@ class BattleView extends BaseEuiView {
 		super.initUI();
 		this.blueInfo.onAwake();
 		this.redInfo.onAwake();
-		this.blueBlood.onAwake();
-		this.redBlood.onAwake();
-		this.cardSkillView.open();
+		this.blueBlood.onAwake({ team: TEAM_TYPE.BLUE });
+		this.blueBlood.setCurrBlood(1000, true);
+		this.redBlood.onAwake({ team: TEAM_TYPE.RED });
+		this.redBlood.setCurrBlood(1000, true);
 		this.criItem.onAwake();
 	}
 
 	/** 对面板数据的初始化，用于子类继承 */
 	public initData(): void {
 		super.initData();
-		this._model = <BattleModel>this.controller.getModel();
+		this._mode = <BattleModel>this.controller.getModel();
+		this._battleController = <BattleController>this.controller;
+		this.cardSkillView.open(this._battleController);
 	}
 
 	public addEvents(): void {
 		super.addEvents();
-		let self = this;
+		App.NotificationCenter.addListener(EventsType.UPDATE_BATTLE_VIEW, this.onUpdateBattleView, this);
 	}
 
 	public removeEvents(): void {
 		super.removeEvents();
-		let self = this;
+		App.NotificationCenter.removeListener(EventsType.UPDATE_BATTLE_VIEW, this.onUpdateBattleView, this);
 	}
 
+	private onUpdateBattleView(team: number, bullet: BaseBullet): void {
+		if (team == TEAM_TYPE.BLUE) {
+			ObjectUtils.removeFromArray(bullet, this._mode.bulletBlues);
+		} else if (team == TEAM_TYPE.RED) {
+			ObjectUtils.removeFromArray(bullet, this._mode.bulletReds);
+		}
+	}
 
+	public close(...param: any[]): void {
+		super.close(param);
+		this.cardSkillView.close();
+	}
 }

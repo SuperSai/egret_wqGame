@@ -1,4 +1,4 @@
 ﻿{
-"titles":["id","assetname","assetScale","delay","damage","speed","accSpeed","bombAni","radius","dieSound","startSound"],
-"data":[[101,"100_1","1",1000,10,1,0,"ui_bao01",10,"10001","10001"]]
+"titles":["bulletId","assetname","assetScale","name","bombAni","startSound","dieSound"],
+"data":[[11001,"11001","1","飞剑","ui_bao01","10001","10001"]]
 }

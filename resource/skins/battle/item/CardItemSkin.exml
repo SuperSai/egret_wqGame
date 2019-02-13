@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="CardItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="110" height="110">
-	<e:Group id="btn_card" height="110" width="110" horizontalCenter="0" verticalCenter="0" touchChildren="false" name="btn_card_1#1">
+	<e:Group id="btn_card" height="110" width="110" touchChildren="false" name="btn_card_1#1" x="0" y="0">
 		<e:Image source="battle_frame_json.ui_card_bg" horizontalCenter="0" verticalCenter="0" x="2" y="1" scaleX="1" scaleY="1"/>
 		<e:Image id="imgCard" horizontalCenter="-0.5" verticalCenter="-0.5" x="7" y="7" width="95" height="95" source="" scaleX="1" scaleY="1"/>
 		<e:Image id="imgCDMask" horizontalCenter="-0.5" verticalCenter="-0.5" x="7" y="7" width="95" height="95" source="" scaleX="1" scaleY="1"/>

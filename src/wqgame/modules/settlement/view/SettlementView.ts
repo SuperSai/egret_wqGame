@@ -32,10 +32,10 @@ class SettlementView extends BaseEuiView {
 
 	private initEffect() {
 		egret.Tween.get(this.container).wait(100).
-			to({ scaleX: 1, scaleY: 1 }, 500, egret.Ease.bounceInOut).wait(1000).
-			to({ verticalCenter: -120 }, 500, egret.Ease.bounceInOut).wait(100).call(() => {
+			to({ scaleX: 1, scaleY: 1 }, 500, egret.Ease.bounceInOut).wait(500).
+			to({ verticalCenter: -120 }, 500, egret.Ease.backIn).wait(100).call(() => {
 				egret.Tween.removeTweens(this.container);
-				egret.Tween.get(this.rewardGroup).to({ scaleX: 1, scaleY: 1 }, 500, egret.Ease.quintInOut).call(() => {
+				egret.Tween.get(this.rewardGroup).to({ scaleX: 1, scaleY: 1 }, 500).call(() => {
 					egret.Tween.removeTweens(this.rewardGroup);
 					this.updateRewardList();
 				}, this.rewardGroup);

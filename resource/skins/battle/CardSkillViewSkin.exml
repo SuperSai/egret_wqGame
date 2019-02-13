@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="CardSkillViewSkin" width="720" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" height="162">
 	<e:Group height="162" width="720" horizontalCenter="0" bottom="0">
-		<e:Image source="battle_frame_json.ui_frame_bg" scale9Grid="77,37,466,42" width="720" horizontalCenter="0" bottom="0"/>
-		<ns1:CustomProgressBar id="bar" skinName="skins.ProgressBarSkin" anchorOffsetX="0" width="632" horizontalCenter="26" bottom="15"/>
-		<e:Image source="battle_frame_json.ui_energy_bg" left="11" bottom="6"/>
-		<e:Label id="txt_energy" text="100" x="24.35" y="122.25" fontFamily="Microsoft YaHei" size="24" anchorOffsetX="0" width="55" textAlign="center" stroke="2"/>
-		<e:Label text="最大值:" x="89" fontFamily="Microsoft YaHei" size="20" anchorOffsetX="0" textAlign="center" stroke="2" bottom="6"/>
-		<e:Label id="txt_maxEnergy" text="200" x="155.59" fontFamily="Microsoft YaHei" size="20" anchorOffsetX="0" textAlign="left" stroke="2" bottom="4"/>
-		<e:List id="lists" height="110" top="0" horizontalCenter="0">
+		<e:Image source="battle_frame_json.ui_frame_bg" scale9Grid="77,37,466,42" width="100%" horizontalCenter="0" bottom="0"/>
+		<e:Group horizontalCenter="0.5" bottom="6" width="691" height="47">
+			<ns1:CustomProgressBar id="bar" skinName="skins.ProgressBarSkin" anchorOffsetX="0" width="632" right="0" verticalCenter="0"/>
+			<e:Image source="battle_frame_json.ui_energy_bg" verticalCenter="0" left="0"/>
+			<e:Label id="txt_energy" text="100" x="13.35" fontFamily="Microsoft YaHei" size="24" anchorOffsetX="0" width="55" textAlign="center" stroke="2" verticalCenter="0"/>
+			<e:Label text="最大值:" x="78" fontFamily="Microsoft YaHei" size="20" anchorOffsetX="0" textAlign="center" stroke="2" y="25"/>
+			<e:Label id="txt_maxEnergy" text="200" x="144.59" fontFamily="Microsoft YaHei" size="20" anchorOffsetX="0" textAlign="left" stroke="2" y="27"/>
+		</e:Group>
+		<e:List id="lists" height="110" horizontalCenter="0" top="0">
 			<e:layout>
 				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="30"/>
 			</e:layout>

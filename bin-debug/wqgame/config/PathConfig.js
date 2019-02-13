@@ -24,7 +24,8 @@ var PathConfig = (function () {
     PathConfig.Language = PathConfig.Root + GameConfig.Language + "/config/language.txt";
     PathConfig.SoundPath = PathConfig.Root + "common/sound/";
     PathConfig.ItemPath = PathConfig.Root + "common/ui/item/{0}.png";
-    PathConfig.MapPath = PathConfig.Root + "common/map/{0}.jpg";
+    PathConfig.ButtlePath = PathConfig.Root + "common/bullet/{0}.png";
+    PathConfig.CardPath = PathConfig.Root + "common/card/{0}.png";
     return PathConfig;
 }());
 __reflect(PathConfig.prototype, "PathConfig");

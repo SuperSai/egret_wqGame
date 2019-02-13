@@ -30,6 +30,7 @@ var CriItem = (function (_super) {
         this.btn_cri.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onClickCri, this);
     };
     CriItem.prototype.onClickCri = function () {
+        App.View.open(ViewConst.SETTLEMENT);
     };
     return CriItem;
 }(BaseEuiItem));

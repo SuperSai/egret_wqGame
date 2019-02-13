@@ -5,7 +5,7 @@
 			"name": "login"
 		},
 		{
-			"keys": "battle_bar_json,battle_frame_json,battle_bg_png",
+			"keys": "battle_bar_json,battle_frame_json,battle_bg_png,battle_json",
 			"name": "battle"
 		},
 		{
@@ -48,7 +48,7 @@
 			"url": "cn/asset/atlas/battle/battle_frame.json",
 			"type": "sheet",
 			"name": "battle_frame_json",
-			"subkeys": "ui_card_bg,ui_card_mask,ui_card_select_bg,ui_energy_bg,ui_frame_bg,ui_level_bg,ui_strokes_bg,ui_strokes_out_bg,ui_timer_bg,ui_zdn_lan,ui_zdn_zi"
+			"subkeys": "ui_card_bg,ui_card_mask,ui_card_select_bg,ui_energy_bg,ui_frame_bg,ui_level_bg,ui_strokes_bg,ui_strokes_out_bg,ui_timer_bg,ui_zdn_lan,ui_zdn_zi,ui_zhuantou"
 		},
 		{
 			"url": "cn/asset/atlas/hall/ui_hall_bg.jpg",
@@ -77,6 +77,12 @@
 			"type": "sheet",
 			"name": "hall_json",
 			"subkeys": "ui_zdn_paihangbang"
+		},
+		{
+			"url": "cn/asset/atlas/battle/battle.json",
+			"type": "sheet",
+			"name": "battle_json",
+			"subkeys": "left_player_1,right_player_1"
 		}
 	]
 }
