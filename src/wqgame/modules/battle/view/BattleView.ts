@@ -17,9 +17,9 @@ class BattleView extends BaseEuiView {
 
 	public constructor($controller: BaseController, $layer: number) {
 		super($controller, $layer);
-		let self = this;
-		self.skinName = SkinName.BattleViewSkin;
-		self.setResources(["battle"]);
+		this.isShowLoading = false;
+		this.skinName = SkinName.BattleViewSkin;
+		this.setResources(["battle"]);
 	}
 
 	/** 对面板进行显示初始化，用于子类继承 */
@@ -52,11 +52,11 @@ class BattleView extends BaseEuiView {
 		App.NotificationCenter.removeListener(EventsType.UPDATE_BATTLE_VIEW, this.onUpdateBattleView, this);
 	}
 
-	private onUpdateBattleView(team: number, bullet: BaseBullet): void {
+	private onUpdateBattleView(team: number, cardType: number, bullet: BaseBullet): void {
 		if (team == TEAM_TYPE.BLUE) {
-			ObjectUtils.removeFromArray(bullet, this._mode.bulletBlues);
+			ObjectUtils.removeFromArray(bullet, this._mode.bulletBlues.TryGetValue(cardType));
 		} else if (team == TEAM_TYPE.RED) {
-			ObjectUtils.removeFromArray(bullet, this._mode.bulletReds);
+			ObjectUtils.removeFromArray(bullet, this._mode.bulletReds.TryGetValue(cardType));
 		}
 	}
 

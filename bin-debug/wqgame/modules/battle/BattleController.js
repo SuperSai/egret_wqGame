@@ -30,11 +30,11 @@ var BattleController = (function (_super) {
         App.View.open(ViewConst.BATTLE);
         // App.Timer.doFrame(1, 0, self.onBattleUpdate, self);
     };
-    BattleController.prototype.onBattleUpdate = function () {
-        if (this._battleModel.bulletBlues.length > 0) {
-            Log.trace(this._battleModel.bulletBlues[0].x);
-        }
-    };
+    // private onBattleUpdate(): void {
+    // 	if (this._battleModel.bulletBlues.length > 0) {
+    // 		Log.trace(this._battleModel.bulletBlues[0].x);
+    // 	}
+    // }
     /** 注册界面才可以打开界面 */
     BattleController.prototype.initRegisterView = function () {
         var self = this;
@@ -45,9 +45,37 @@ var BattleController = (function (_super) {
         var bullet = new BaseBullet(this, LayerMgr.GAME_UI_LAYER);
         bullet.team = team;
         bullet.open({ startPos: startPos, endPos: endPos, vo: vo, durable: durable, cardType: cardType });
+        this.saveBullets(bullet.team, cardType, bullet);
         bullet.addToParent();
-        team == TEAM_TYPE.BLUE ? this._battleModel.bulletBlues.push(bullet) : this._battleModel.bulletReds.push(bullet);
         bullet.doBulletPath(team == TEAM_TYPE.BLUE ? 1 : -1);
+    };
+    BattleController.prototype.saveBullets = function (team, cardType, bullet) {
+        if (team == TEAM_TYPE.BLUE) {
+            var blueBullets = null;
+            if (!this._battleModel.bulletBlues.ContainsKey(cardType)) {
+                blueBullets = [];
+                this._battleModel.bulletBlues.Add(cardType, blueBullets);
+                blueBullets = this._battleModel.bulletBlues.TryGetValue(cardType);
+            }
+            else {
+                blueBullets = this._battleModel.bulletBlues.TryGetValue(cardType);
+            }
+            if (blueBullets)
+                blueBullets.push(bullet);
+        }
+        else if (team == TEAM_TYPE.RED) {
+            var redBullets = null;
+            if (!this._battleModel.bulletReds.ContainsKey(cardType)) {
+                redBullets = this._battleModel.bulletReds.TryGetValue(cardType);
+                if (!redBullets)
+                    redBullets = [];
+            }
+            else {
+                redBullets = this._battleModel.bulletReds.TryGetValue(cardType);
+            }
+            if (redBullets)
+                redBullets.push(bullet);
+        }
     };
     Object.defineProperty(BattleController.prototype, "battleView", {
         get: function () {

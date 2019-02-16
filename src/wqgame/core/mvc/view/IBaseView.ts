@@ -2,16 +2,17 @@
  * View基类接口
  */
 interface IBaseView {
+
+    /** 是否显示Loading */
+    isShowLoading: boolean;
+    
     /**
      * 是否已经初始化
      * @returns {boolean}
      */
     isInit(): boolean;
-
     /**
      * 面板是否显示
-     * @return
-     *
      */
     isShow(): boolean;
 

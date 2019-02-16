@@ -1,4 +1,5 @@
 ﻿{
-"titles":["bulletId","assetname","assetScale","name","bombAni","startSound","dieSound"],
-"data":[[11001,"11001","1","飞剑","ui_bao01","10001","10001"]]
+"titles":["bulletId","assetname","assetScale","name","isRotation","bombAni","startSound","dieSound"],
+"data":[[11001,"11001","1","飞剑",0,"ui_bao01","10001","10001"],
+[11002,"11002","1","飞斧",1,"ui_bao01","10001","10001"]]
 }

@@ -74,14 +74,14 @@ var BaseBullet = (function (_super) {
         var _this = this;
         this._distance = egret.Point.distance(this._data.startPos, this._data.endPos) * dir;
         this._topPoint = new egret.Point(this.x + this._distance / 2, this.y - this._top);
-        egret.Tween.get(this, {
-            onChange: function () {
-                Log.trace("x:" + _this.x);
-            }
-        }).to({ factor: 1 }, time).call(function () {
+        if (this._data.vo.isRotation) {
+            egret.Tween.get(this, { loop: true }).to({ rotation: 360 }, 100);
+        }
+        egret.Tween.get(this).to({ factor: 1 }, time).call(function () {
+            egret.Tween.removeTweens(_this);
             _this.bulletBombEffect();
             App.Display.removeFromParent(_this);
-            App.NotificationCenter.dispatch(EventsType.UPDATE_BATTLE_VIEW, _this._team, _this);
+            App.NotificationCenter.dispatch(EventsType.UPDATE_BATTLE_VIEW, _this._team, _this._data.cardType, _this);
             App.NotificationCenter.dispatch(EventsType.UPDATE_BLOOD, _this._team, _this._durable);
         });
     };

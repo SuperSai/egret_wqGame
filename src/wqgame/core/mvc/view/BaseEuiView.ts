@@ -7,7 +7,7 @@ class BaseEuiView extends eui.Component implements IBaseView {
     private _isInit: boolean;
     private _resources: string[] = null;
     private _btnEffect: UI.BtnEffectComponent = null;
-
+    public isShowLoading: boolean = true;
     /**
      * 构造函数
      * @param $controller 所属模块

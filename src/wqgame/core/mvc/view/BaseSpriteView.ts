@@ -7,7 +7,8 @@ class BaseSpriteView extends egret.DisplayObjectContainer implements IBaseView {
     private _myParent: egret.DisplayObjectContainer;
     private _isInit: boolean;
     private _resources: string[] = null;
-
+    public isShowLoading: boolean = true;
+    
     /**
      * 构造函数
      * @param $controller 所属模块

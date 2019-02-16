@@ -96,7 +96,8 @@ var ViewMgr = (function (_super) {
             openComplete && openComplete();
         }
         else {
-            App.GameLoading.showLoading();
+            if (view.isShowLoading)
+                App.GameLoading.showLoading();
             view.loadResource(function () {
                 view.setVisible(false);
                 App.GameLoading.hideLoading();

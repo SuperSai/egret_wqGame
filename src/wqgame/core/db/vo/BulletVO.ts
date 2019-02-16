@@ -11,4 +11,14 @@ class BulletVO {
 	public startSound: string;
 	/** 子弹销毁音效 */
 	public dieSound: string;
+
+	private _isRotation: boolean = false;
+
+	public get isRotation(): boolean {
+		return this._isRotation;
+	}
+
+	public set isRotation(value) {
+		this._isRotation = Number(value) === 0 ? false : true;
+	}
 }

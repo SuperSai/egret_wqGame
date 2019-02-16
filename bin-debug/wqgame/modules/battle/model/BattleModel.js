@@ -18,8 +18,8 @@ var BattleModel = (function (_super) {
     }
     /** 初始化 */
     BattleModel.prototype.init = function () {
-        this._bulletBlues = [];
-        this._bulletReds = [];
+        this._bulletBlues = new TSDictionary();
+        this._bulletReds = new TSDictionary();
     };
     Object.defineProperty(BattleModel.prototype, "bulletBlues", {
         /** 蓝队子弹列表 */

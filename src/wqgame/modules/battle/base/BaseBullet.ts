@@ -67,10 +67,14 @@ class BaseBullet extends BaseSpriteView {
 	private setBulletPathData(dir: number, time: number): void {
 		this._distance = egret.Point.distance(this._data.startPos, this._data.endPos) * dir;
 		this._topPoint = new egret.Point(this.x + this._distance / 2, this.y - this._top);
+		if (this._data.vo.isRotation) {
+			egret.Tween.get(this, { loop: true }).to({ rotation: 360 }, 100);
+		}
 		egret.Tween.get(this).to({ factor: 1 }, time).call(() => {
+			egret.Tween.removeTweens(this);
 			this.bulletBombEffect();
 			App.Display.removeFromParent(this);
-			App.NotificationCenter.dispatch(EventsType.UPDATE_BATTLE_VIEW, this._team, this);
+			App.NotificationCenter.dispatch(EventsType.UPDATE_BATTLE_VIEW, this._team, this._data.cardType, this);
 			App.NotificationCenter.dispatch(EventsType.UPDATE_BLOOD, this._team, this._durable);
 		});
 	}
@@ -82,8 +86,6 @@ class BaseBullet extends BaseSpriteView {
 		App.Layer.addToLayer(bomb, LayerMgr.GAME_EFFECT_LAYER);
 		bomb.play();
 	}
-
-
 
 	public get bulletId(): number {
 		return this._bulletId;

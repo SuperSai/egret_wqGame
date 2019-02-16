@@ -15,9 +15,9 @@ var BattleView = (function (_super) {
     __extends(BattleView, _super);
     function BattleView($controller, $layer) {
         var _this = _super.call(this, $controller, $layer) || this;
-        var self = _this;
-        self.skinName = SkinName.BattleViewSkin;
-        self.setResources(["battle"]);
+        _this.isShowLoading = false;
+        _this.skinName = SkinName.BattleViewSkin;
+        _this.setResources(["battle"]);
         return _this;
     }
     /** 对面板进行显示初始化，用于子类继承 */
@@ -46,12 +46,12 @@ var BattleView = (function (_super) {
         _super.prototype.removeEvents.call(this);
         App.NotificationCenter.removeListener(EventsType.UPDATE_BATTLE_VIEW, this.onUpdateBattleView, this);
     };
-    BattleView.prototype.onUpdateBattleView = function (team, bullet) {
+    BattleView.prototype.onUpdateBattleView = function (team, cardType, bullet) {
         if (team == TEAM_TYPE.BLUE) {
-            ObjectUtils.removeFromArray(bullet, this._mode.bulletBlues);
+            ObjectUtils.removeFromArray(bullet, this._mode.bulletBlues.TryGetValue(cardType));
         }
         else if (team == TEAM_TYPE.RED) {
-            ObjectUtils.removeFromArray(bullet, this._mode.bulletReds);
+            ObjectUtils.removeFromArray(bullet, this._mode.bulletReds.TryGetValue(cardType));
         }
     };
     BattleView.prototype.close = function () {

@@ -22,6 +22,7 @@ var BaseEuiView = (function (_super) {
         var _this = _super.call(this) || this;
         _this._resources = null;
         _this._btnEffect = null;
+        _this.isShowLoading = true;
         _this._controller = $controller;
         _this._myParent = App.Layer.getLayerByType($layer);
         _this._isInit = false;
