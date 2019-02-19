@@ -54,6 +54,7 @@ class CardSkillView extends BaseEuiView {
 			let vo: BulletVO = GlobleData.getData(GlobleData.BulletVO, cardVO.bulletId);
 			if (vo && this._battleController && this._battleController.battleView) {
 				this._battleController.createBullet(TEAM_TYPE.BLUE, vo, cardVO.durable, cardVO.type, this._battleController.battleView.leftPlayer.localToGlobal(), this._battleController.battleView.rightPlayer.localToGlobal());
+				this._battleController.createBullet(TEAM_TYPE.RED, vo, cardVO.durable, cardVO.type, this._battleController.battleView.rightPlayer.localToGlobal(), this._battleController.battleView.leftPlayer.localToGlobal());
 				this.txt_energy.text = parseInt(this.txt_energy.text) - cardVO.energy + "";
 			}
 		} else {

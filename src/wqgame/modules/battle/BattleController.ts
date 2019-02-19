@@ -44,6 +44,7 @@ class BattleController extends BaseController {
 	public createBullet(team: number, vo: BulletVO, durable: number, cardType: number, startPos: egret.Point, endPos: egret.Point): void {
 		let bullet: BaseBullet = new BaseBullet(this, LayerMgr.GAME_UI_LAYER);
 		bullet.team = team;
+		if (team == TEAM_TYPE.BLUE && !bullet.BattleController) bullet.BattleController = this;
 		bullet.open({ startPos: startPos, endPos: endPos, vo: vo, durable: durable, cardType: cardType });
 		this.saveBulletsData(bullet.team, cardType, bullet);
 		bullet.addToParent();
@@ -64,8 +65,9 @@ class BattleController extends BaseController {
 		} else if (team == TEAM_TYPE.RED) {
 			let redBullets: BaseBullet[] = null;
 			if (!this._battleModel.bulletReds.ContainsKey(cardType)) {
+				redBullets = [];
+				this._battleModel.bulletReds.Add(cardType, redBullets);
 				redBullets = this._battleModel.bulletReds.TryGetValue(cardType);
-				if (!redBullets) redBullets = [];
 			} else {
 				redBullets = this._battleModel.bulletReds.TryGetValue(cardType);
 			}

@@ -44,12 +44,14 @@ var BattleController = (function (_super) {
     BattleController.prototype.createBullet = function (team, vo, durable, cardType, startPos, endPos) {
         var bullet = new BaseBullet(this, LayerMgr.GAME_UI_LAYER);
         bullet.team = team;
+        if (team == TEAM_TYPE.BLUE && !bullet.BattleController)
+            bullet.BattleController = this;
         bullet.open({ startPos: startPos, endPos: endPos, vo: vo, durable: durable, cardType: cardType });
-        this.saveBullets(bullet.team, cardType, bullet);
+        this.saveBulletsData(bullet.team, cardType, bullet);
         bullet.addToParent();
         bullet.doBulletPath(team == TEAM_TYPE.BLUE ? 1 : -1);
     };
-    BattleController.prototype.saveBullets = function (team, cardType, bullet) {
+    BattleController.prototype.saveBulletsData = function (team, cardType, bullet) {
         if (team == TEAM_TYPE.BLUE) {
             var blueBullets = null;
             if (!this._battleModel.bulletBlues.ContainsKey(cardType)) {
@@ -66,9 +68,9 @@ var BattleController = (function (_super) {
         else if (team == TEAM_TYPE.RED) {
             var redBullets = null;
             if (!this._battleModel.bulletReds.ContainsKey(cardType)) {
+                redBullets = [];
+                this._battleModel.bulletReds.Add(cardType, redBullets);
                 redBullets = this._battleModel.bulletReds.TryGetValue(cardType);
-                if (!redBullets)
-                    redBullets = [];
             }
             else {
                 redBullets = this._battleModel.bulletReds.TryGetValue(cardType);

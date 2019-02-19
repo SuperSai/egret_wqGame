@@ -64,6 +64,7 @@ class ObjectUtils {
     }
 
     public static removeFromArray(target: any, array: any[]): any[] {
+        if (!array || array.length < 1) return null;
         let index = array.indexOf(target);
         if (index >= 0) array.splice(index, 1);
         return array;

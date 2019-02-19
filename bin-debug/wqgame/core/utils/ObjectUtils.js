@@ -64,6 +64,8 @@ var ObjectUtils = (function () {
         return newList;
     };
     ObjectUtils.removeFromArray = function (target, array) {
+        if (!array || array.length < 1)
+            return null;
         var index = array.indexOf(target);
         if (index >= 0)
             array.splice(index, 1);
